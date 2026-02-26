@@ -37,6 +37,10 @@
       padding: 0;
       box-sizing: border-box;
     }
+    img, video {
+      max-width: 100%;
+      height: auto;
+    }
 
     body {
       font-family: "Inter", sans-serif;
@@ -158,8 +162,27 @@
       color: #c2a25b;
       border-bottom: 2px solid #c2a25b;
     }
+    .hamburger {
+      display: none;
+      font-size: 1.8rem;
+      color: white;
+      cursor: pointer;
+    }
     @media (max-width: 800px) {
-      .nav-links { display: none; }
+      .hamburger { display: block; }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: #1a1a1a;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px 0;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+      }
+      .nav-links.active { display: flex; }
+      .nav-links a { margin: 15px 0; text-align: center; font-size: 1.2rem; }
       header { background: #1a1a1a; position: relative; }
     }
 
@@ -553,6 +576,9 @@
   <header>
     <nav class="container">
       <div class="logo"><img src="Logo.png" alt="Litoh Graphics Studio Logo" style="height: 90px; vertical-align: middle;"></div>
+      <div class="hamburger">
+        <i class="fas fa-bars"></i>
+      </div>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
         <a href="campaign.html">Campaigns</a>
@@ -848,7 +874,7 @@
           <h4>Contact Info</h4>
           <div class="footer-contact">
             <p><i class="fas fa-phone-alt"></i> 0728 974 780</p>
-            <p><i class="fas fa-envelope"></i> info@litoh.co.ke</p>
+            <p><i class="fas fa-envelope"></i> info@litohgraphics.co.ke</p>
             <p><i class="fas fa-map-marker-alt"></i> Watersys Plaza, 1st Floor</p>
           </div>
         </div>
@@ -862,6 +888,23 @@
 
   <!-- scripts -->
   <script>
+    // Hamburger Menu Logic
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+
     // Intersection Observer for Reveal Animations
     const observerOptions = {
       threshold: 0.1,
