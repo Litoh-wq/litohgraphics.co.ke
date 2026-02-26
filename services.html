@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creative & Tech Services | Branding, Printing & IT Support | Litoh Graphics</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <meta name="description" content="Explore Litoh Graphics' wide range of services: professional branding, large format printing, graphic design, on-site IT tech support, and custom web design in Nairobi.">
+  <meta name="keywords" content="branding services, logo design Nairobi, large format printing Kenya, IT support, tech services Nairobi, web development Kenya, commercial printing, corporate identity">
+  <meta name="author" content="Litoh Graphics Studio">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.litohgraphics.co.ke/services.html">
+  <meta property="og:title" content="Creative & Tech Services | Branding, Printing & IT Support | Litoh Graphics">
+  <meta property="og:description" content="Professional branding, high-speed printing, and expert tech support. discover why businesses trust Litoh Graphics.">
+  <meta property="og:image" content="Brand.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.litohgraphics.co.ke/services.html">
+  <meta property="twitter:title" content="Creative & Tech Services | Branding, Printing & IT Support | Litoh Graphics">
+  <meta property="twitter:description" content="Professional branding, high-speed printing, and expert tech support. discover why businesses trust Litoh Graphics.">
+  <meta property="twitter:image" content="Brand.jpg">
+
+  <link rel="canonical" href="https://www.litohgraphics.co.ke/services.html">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter + Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #fcfaf7;
+      color: #1e1e1e;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+      letter-spacing: -0.02em;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 100px;
+      height: 6px;
+      background: #c2a25b;
+      border-radius: 6px;
+    }
+    .text-red { color: #c2a25b; }
+    .text-gold { color: #c2a25b; }
+
+    /* parallax */
+    .parallax-wrapper { position: relative; overflow: hidden; }
+    .parallax-bg {
+      position: absolute; top:0; left:0; width:100%; height:130%;
+      background-size: cover; background-position: center; background-attachment: fixed;
+      transform: translateZ(0); will-change: transform; z-index: -2;
+    }
+    @media (max-width:768px){ .parallax-bg { background-attachment: scroll; } }
+    .overlay-dark { position: absolute; top:0;left:0;width:100%;height:100%; background: rgba(0,0,0,0.7); z-index:-1; }
+
+    /* buttons */
+    .btn {
+      display: inline-block; background: #c2a25b; color: white; font-weight: 700;
+      padding: 16px 48px; border-radius: 50px; text-decoration: none; letter-spacing: 0.5px;
+      transition: all 0.25s ease; border: 2px solid transparent; font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+    .btn:hover { background: #a68a4d; transform: translateY(-4px); box-shadow: 0 25px 30px -10px rgba(194,162,91,0.3); }
+    .btn-outline-light { background: transparent; border: 2px solid white; color: white; }
+    .btn-outline-light:hover { background: white; color: #1e1e1e; }
+    .btn-outline-dark { background: transparent; border: 2px solid #c2a25b; color: #c2a25b; }
+    .btn-outline-dark:hover { background: #c2a25b; color: white; }
+
+    /* header */
+    header { padding: 25px 0; background: transparent; position: absolute; width: 100%; z-index: 20; }
+    .logo { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; }
+    .logo span { color: #c2a25b; font-family: 'Playfair Display', serif; font-weight: 900; }
+    nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 40px; font-weight: 600; }
+    .nav-links a { text-decoration: none; color: white; font-size: 1.1rem; transition: color 0.2s; text-transform: uppercase; }
+    .nav-links a:hover, .nav-links a.active { color: #c2a25b; border-bottom: 2px solid #c2a25b; }
+    @media (max-width:800px){ .nav-links{display:none;} header{background:#111;position:relative;} }
+
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    .reveal-right.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* page hero */
+    .page-hero {
+      height: 100vh; min-height: 700px; display: flex; align-items: center;
+      color: white; position: relative;
+    }
+    .page-hero-bg { background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80'); }
+    .page-hero-content { position: relative; z-index: 5; max-width: 900px; }
+    .page-hero h1 { font-size: 5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    .page-hero .hero-tag { font-size: 1.5rem; font-weight: 600; color: #c2a25b; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+
+    /* services detail sections */
+    .services-overview { padding: 100px 0; background: #ffffff; }
+    .services-intro { max-width: 800px; margin-bottom: 60px; }
+    .services-intro p { font-size: 1.3rem; color: #333; }
+
+    .service-detailed {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 60px;
+      margin-bottom: 100px;
+      align-items: center;
+    }
+    .service-detailed:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* Slideshow for Printing Section */
+    .slideshow-container {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+      border-radius: 40px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    }
+    .slide {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      object-fit: cover;
+    }
+    .slide.active {
+      opacity: 1;
+    }
+    .service-text {
+      flex: 1 1 400px;
+    }
+    .service-text h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      color: #c2a25b;
+    }
+    .service-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .service-text p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: #2c2c2c;
+    }
+    .service-features {
+      list-style: none;
+      margin: 25px 0;
+    }
+    .service-features li {
+      margin: 12px 0;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .service-features i {
+      color: #c2a25b;
+      font-size: 1.4rem;
+      width: 28px;
+    }
+    .service-image {
+      flex: 1 1 400px;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 30px 40px -20px rgba(0,0,0,0.3);
+      height: 400px;
+    }
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+    .service-image:hover img {
+      transform: scale(1.05);
+    }
+
+    /* campaign-specific service banner */
+    .campaign-banner {
+      background: #1e1e1e;
+      color: white;
+      padding: 80px 0;
+      border-top: 6px solid #c2a25b;
+      border-bottom: 6px solid #c2a25b;
+    }
+    .campaign-banner h2 {
+      font-size: 3rem;
+      font-weight: 800;
+    }
+    .campaign-banner .btn {
+      margin-top: 30px;
+    }
+
+    /* contact strip */
+    .contact-strip {
+      background: #c2a25b; color: white; padding: 60px 0; text-align: center;
+    }
+    .contact-strip h2 { font-size: 3rem; margin-bottom: 20px; }
+    .contact-strip .phone-big { font-size: 2.8rem; font-weight: 800; }
+
+    /* footer */
+    footer {
+      background: #0f0f0f; color: #d1d1d1; padding: 80px 0 40px;
+      border-top: 1px solid #222;
+    }
+    .footer-content {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 50px;
+    }
+    .footer-col h4 {
+      color: #fff; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .footer-col p { line-height: 1.8; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li a { color: #aaa; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #c2a25b; }
+    
+    .footer-logo img { filter: brightness(1.2); margin-bottom: 20px; }
+    
+    .social-links { display: flex; gap: 15px; margin-top: 20px; }
+    .social-links a {
+      width: 40px; height: 40px; background: #222; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: all 0.3s; font-size: 1rem;
+    }
+    .social-links a:hover { background: #c2a25b; transform: translateY(-3px); }
+
+    .footer-contact p { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+    .footer-contact i { color: #c2a25b; width: 20px; }
+
+    .footer-bottom {
+      border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center;
+      font-size: 0.95rem; color: #777;
+    }
+    @media (max-width:600px){ 
+      .section-title{font-size:2.2rem;} 
+      .page-hero h1{font-size:3.5rem;}
+      .service-detailed { flex-direction: column !important; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo"><img src="Logo.png" alt="Litoh Graphics Studio Logo" style="height: 90px; vertical-align: middle;"></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="campaign.html">Campaigns</a>
+        <a href="services.html" class="active">Services</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- page hero -->
+  <section class="page-hero parallax-wrapper">
+    <div class="parallax-bg page-hero-bg"></div>
+    <div class="overlay-dark"></div>
+    <div class="container page-hero-content reveal">
+      <div class="hero-tag">What we do</div>
+      <h1>Services</h1>
+      <p style="font-size:1.3rem; max-width:700px;">Creative, technical, and campaign-ready – all under one roof.</p>
+    </div>
+  </section>
+
+  <!-- services overview intro -->
+  <section class="services-overview reveal">
+    <div class="container">
+      <div class="services-intro">
+        <h2 class="section-title">End-to-end solutions</h2>
+        <p>From branding a new party to printing thousands of posters and securing campaign IT – we deliver with speed and precision. Trusted by Kenyan politicians and businesses since 2012.</p>
+      </div>
+
+      <!-- detailed service 1: Branding -->
+      <div class="service-detailed reveal">
+        <div class="service-text reveal-left">
+          <h2>01.</h2>
+          <h3>Branding & Identity</h3>
+          <p>Your visual identity is your promise to voters and customers. We create distinctive, memorable brands that cut through the noise.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Logo design & visual identity</li>
+            <li><i class="fas fa-check-circle"></i> Party / corporate branding guidelines</li>
+            <li><i class="fas fa-check-circle"></i> Slogan & messaging development</li>
+            <li><i class="fas fa-check-circle"></i> Brand strategy for campaigns</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline-dark">Discuss your brand</a>
+        </div>
+        <div class="service-image reveal-right">
+          <img src="Brand.jpg" alt="Branding">
+        </div>
+      </div>
+
+      <!-- detailed service 2: Graphic Design -->
+      <div class="service-detailed reveal">
+        <div class="service-text reveal-right">
+          <h2>02.</h2>
+          <h3>Graphic Design</h3>
+          <p>From posters and manifestos to social media creatives – we design materials that communicate powerfully and look professional.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Campaign posters (A4 to billboard)</li>
+            <li><i class="fas fa-check-circle"></i> Manifesto & brochure design</li>
+            <li><i class="fas fa-check-circle"></i> Social media templates & content</li>
+            <li><i class="fas fa-check-circle"></i> Vehicle branding & signage</li>
+          </ul>
+          <a href="campaign.html" class="btn btn-outline-dark">See campaign work</a>
+        </div>
+        <div class="service-image reveal-left">
+          <img src="graphics.jpg" alt="Graphic Design">
+        </div>
+      </div>
+
+      <!-- detailed service 3: Printing -->
+      <div class="service-detailed reveal">
+        <div class="service-text reveal-left">
+          <h2>03.</h2>
+          <h3>Printing (large format & more)</h3>
+          <p>We own high-speed printers and partner with top presses to deliver anything from a single banner to 50,000 flyers – fast.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Billboards & flex banners (any size)</li>
+            <li><i class="fas fa-check-circle"></i> Flyers, brochures, business cards</li>
+            <li><i class="fas fa-check-circle"></i> Stickers, t-shirts, caps, mugs</li>
+            <li><i class="fas fa-check-circle"></i> Urgent campaign printing (24h turnaround)</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline-dark">Request print quote</a>
+        </div>
+        <div class="service-image reveal-right">
+          <div class="slideshow-container">
+            <img src="printing.jpg" class="slide active" alt="Printing 1">
+            <img src="printing2.jpg" class="slide" alt="Printing 2">
+            <img src="printing3.jpg" class="slide" alt="Printing 3">
+          </div>
+        </div>
+      </div>
+
+      <!-- detailed service 4: IT Tech Support -->
+      <div class="service-detailed reveal">
+        <div class="service-text reveal-right">
+          <h2>04.</h2>
+          <h3>IT Tech Support</h3>
+          <p>Campaigns run on technology. We provide on-ground IT support, secure communications, and data backup so you can focus on winning.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Rally sound & PA system setup</li>
+            <li><i class="fas fa-check-circle"></i> Secure WhatsApp / signal groups</li>
+            <li><i class="fas fa-check-circle"></i> Data backup & voter database</li>
+            <li><i class="fas fa-check-circle"></i> Hardware troubleshooting & support</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline-dark">Get IT support</a>
+        </div>
+        <div class="service-image reveal-left">
+          <img src="IT.jpg" alt="IT Support">
+        </div>
+      </div>
+
+      <!-- detailed service 5: Web Design -->
+      <div class="service-detailed reveal">
+        <div class="service-text reveal-left">
+          <h2>05.</h2>
+          <h3>Web Design & Digital</h3>
+          <p>A strong online presence builds credibility. We build modern, fast websites for candidates, parties, and businesses.</p>
+          <ul class="service-features">
+            <li><i class="fas fa-check-circle"></i> Candidate & campaign websites</li>
+            <li><i class="fas fa-check-circle"></i> Election result dashboards</li>
+            <li><i class="fas fa-check-circle"></i> E-commerce & business sites</li>
+            <li><i class="fas fa-check-circle"></i> Mobile-friendly, fast hosting</li>
+          </ul>
+          <a href="contact.html" class="btn btn-outline-dark">Start your site</a>
+        </div>
+        <div class="service-image reveal-right">
+          <img src="web.jpg" alt="Web Design">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- campaign-specific service banner (cross-sell) -->
+  <section class="campaign-banner reveal">
+    <div class="container" style="text-align:center;">
+      <h2>🇰🇪 2027 campaign bundle</h2>
+      <p style="font-size:1.4rem; max-width:800px; margin:20px auto;">Get branding, printing, IT support and website – discounted for early‑bird aspirants.</p>
+      <a href="campaign.html" class="btn">Explore campaign services →</a>
+    </div>
+  </section>
+
+  <!-- contact strip (same as others) -->
+  <section class="contact-strip reveal">
+    <div class="container">
+      <h2>Need a custom solution?</h2>
+      <div class="phone-big">0728 974 780</div>
+      <p style="margin:20px 0;">Watersys Plaza, First Floor · P.O Box 37812-00100</p>
+      <a href="contact.html" class="btn btn-outline-light" style="border-color:white; color:white;">Contact us now</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo"><img src="Logo.png" alt="LITOH" style="height: 70px;"></div>
+          <p>Premium creative studio specializing in branding, high-impact graphic design, and comprehensive campaign solutions for aspirants since 2012.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="campaign.html">2027 Campaigns</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Services</h4>
+          <ul>
+            <li><a href="services.html">Branding & Identity</a></li>
+            <li><a href="services.html">Large Format Printing</a></li>
+            <li><a href="services.html">Campaign Posters</a></li>
+            <li><a href="services.html">IT Tech Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone-alt"></i> 0728 974 780</p>
+            <p><i class="fas fa-envelope"></i> info@litoh.co.ke</p>
+            <p><i class="fas fa-map-marker-alt"></i> Watersys Plaza, 1st Floor</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Litoh Graphics Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scripts -->
+  <script>
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Smooth Parallax for Video/Images
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.pageYOffset;
+      
+      // Page Hero Parallax
+      const parallaxBg = document.querySelector('.parallax-bg');
+      if (parallaxBg && window.innerWidth > 768) {
+        parallaxBg.style.transform = `translateY(${scrollPos * 0.12}px)`;
+      }
+
+      // Detailed service images parallax
+      document.querySelectorAll('.service-image img').forEach(img => {
+        if (!img.classList.contains('slide')) {
+          const rect = img.getBoundingClientRect();
+          const visiblePct = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+          if (visiblePct > 0 && visiblePct < 1) {
+            img.style.transform = `scale(1.1) translateY(${(visiblePct - 0.5) * 40}px)`;
+          }
+        }
+      });
+    });
+
+    // Printing Section Slideshow Logic
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    if (slides.length > 0) {
+      setInterval(() => {
+        slides[currentSlide].classList.remove('active');
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add('active');
+      }, 4000); // changes every 4 seconds
+    }
+
+    // Auto-renew year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

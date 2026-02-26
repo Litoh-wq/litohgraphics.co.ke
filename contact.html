@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | Litoh Graphics Studio | Nairobi, Kenya</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <meta name="description" content="Get in touch with Litoh Graphics Studio. Visit us at Watersys Plaza, Nairobi, for premium branding, printing, and IT support services. Call 0728 974 780.">
+  <meta name="keywords" content="contact Litoh Graphics, Nairobi creative studio, Watersys Plaza Nairobi, high-quality printing Nairobi, branding agency Kenya, IT support contact">
+  <meta name="author" content="Litoh Graphics Studio">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.litoh.co.ke/contact.html">
+  <meta property="og:title" content="Contact Us | Litoh Graphics Studio | Nairobi, Kenya">
+  <meta property="og:description" content="Reach out to Litoh Graphics for professional design, print, and tech solutions. We're ready to help you win.">
+  <meta property="og:image" content="contact.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://www.litoh.co.ke/contact.html">
+  <meta property="twitter:title" content="Contact Us | Litoh Graphics Studio | Nairobi, Kenya">
+  <meta property="twitter:description" content="Reach out to Litoh Graphics for professional design, print, and tech solutions. We're ready to help you win.">
+  <meta property="twitter:image" content="contact.jpg">
+
+  <link rel="canonical" href="https://www.litoh.co.ke/contact.html">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: Inter + Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: #fcfaf7;
+      color: #1e1e1e;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-weight: 700; line-height: 1.2; }
+    .container { max-width: 1300px; margin: 0 auto; padding: 0 30px; }
+    .section-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1.2rem;
+      position: relative;
+      display: inline-block;
+      letter-spacing: -0.02em;
+    }
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+      width: 100px;
+      height: 6px;
+      background: #c2a25b;
+      border-radius: 6px;
+    }
+    .text-red { color: #c2a25b; }
+
+    /* parallax */
+    .parallax-wrapper { position: relative; overflow: hidden; }
+    .parallax-bg {
+      position: absolute; top:0; left:0; width:100%; height:130%;
+      background-size: cover; background-position: center; background-attachment: fixed;
+      transform: translateZ(0); will-change: transform; z-index: -2;
+    }
+    @media (max-width:768px){ .parallax-bg { background-attachment: scroll; } }
+    .overlay-dark { position: absolute; top:0;left:0;width:100%;height:100%; background: rgba(0,0,0,0.7); z-index:-1; }
+
+    /* buttons */
+    .btn {
+      display: inline-block; background: #c2a25b; color: white; font-weight: 700;
+      padding: 16px 48px; border-radius: 50px; text-decoration: none; letter-spacing: 0.5px;
+      transition: all 0.25s ease; border: 2px solid transparent; font-size: 1.1rem;
+      text-transform: uppercase;
+    }
+    .btn:hover { background: #a68a4d; transform: translateY(-4px); box-shadow: 0 25px 30px -10px rgba(194,162,91,0.3); }
+    .btn-outline-light { background: transparent; border: 2px solid white; color: white; }
+    .btn-outline-light:hover { background: white; color: #1e1e1e; }
+
+    /* header */
+    header { padding: 25px 0; background: transparent; position: absolute; width: 100%; z-index: 20; }
+    .logo { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.5px; }
+    .logo span { color: #c2a25b; font-family: 'Playfair Display', serif; font-weight: 900; }
+    nav { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .nav-links { display: flex; gap: 40px; font-weight: 600; }
+    .nav-links a { text-decoration: none; color: white; font-size: 1.1rem; transition: color 0.2s; text-transform: uppercase; }
+    .nav-links a:hover, .nav-links a.active { color: #c2a25b; border-bottom: 2px solid #c2a25b; }
+    @media (max-width:800px){ .nav-links{display:none;} header{background:#111;position:relative;} }
+
+    /* Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    .reveal-left.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(50px);
+      transition: all 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+      will-change: transform, opacity;
+    }
+    .reveal-right.active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* page hero (smaller) */
+    .page-hero {
+      height: 100vh; min-height: 700px; display: flex; align-items: center;
+      color: white; position: relative;
+    }
+    .page-hero-bg { background-image: url('contact.jpg'); }
+    .page-hero-content { position: relative; z-index: 5; max-width: 900px; }
+    .page-hero h1 { font-size: 5rem; font-weight: 900; line-height: 1.1; margin-bottom: 20px; }
+    .page-hero .hero-tag { font-size: 1.5rem; font-weight: 600; color: #c2a25b; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 20px; }
+
+    /* contact main */
+    .contact-main { padding: 100px 0; background: #ffffff; }
+    .contact-grid { display: flex; flex-wrap: wrap; gap: 50px; }
+    .contact-details { flex: 1 1 300px; }
+    .info-block { margin-bottom: 40px; }
+    .info-block h3 { font-size: 1.8rem; margin-bottom: 20px; }
+    .info-item { display: flex; align-items: center; margin: 20px 0; font-size: 1.1rem; }
+    .info-item i { color: #c2a25b; width: 40px; font-size: 1.8rem; }
+    .info-item a { color: #1e1e1e; text-decoration: none; transition: color 0.2s; }
+    .info-item a:hover { color: #c2a25b; }
+    .social-links-contact a {
+      display: inline-block; margin-right: 25px; color: #333; font-size: 2.2rem;
+      transition: color 0.2s;
+    }
+    .social-links-contact a:hover { color: #c2a25b; }
+
+    /* contact form */
+    .contact-form-block {
+      flex: 2 1 450px; background: #f9f7f4; padding: 50px; border-radius: 40px;
+      box-shadow: 0 20px 40px -10px rgba(0,0,0,0.1);
+    }
+    .contact-form-block h2 { font-size: 2rem; margin-bottom: 30px; }
+    .form-row { display: flex; gap: 20px; flex-wrap: wrap; margin-bottom: 20px; }
+    .form-group { flex: 1 1 200px; }
+    input, select, textarea {
+      width: 100%; padding: 16px 22px; border: 1px solid #ddd; border-radius: 50px;
+      font-family: inherit; font-size: 1rem; background: white; transition: 0.2s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none; border-color: #c2a25b; box-shadow: 0 0 0 3px rgba(194,162,91,0.2);
+    }
+    textarea { border-radius: 30px; resize: vertical; }
+    .checkbox { display: flex; align-items: center; gap: 10px; margin: 20px 0; }
+    .checkbox input { width: auto; }
+    .btn-submit {
+      background: #c2a25b; color: white; font-weight: 700; padding: 16px 40px;
+      border-radius: 50px; font-size: 1.1rem; border: none; cursor: pointer;
+      transition: all 0.2s; width: 100%; text-transform: uppercase;
+    }
+    .btn-submit:hover { background: #a68a4d; transform: translateY(-3px); }
+
+    /* campaign strip (red) */
+    .campaign-strip {
+      background: #c2a25b; color: white; padding: 60px 0; text-align: center;
+    }
+    .campaign-strip h3 { font-size: 2.5rem; margin-bottom: 10px; }
+    .campaign-strip .phone-big { font-size: 3rem; font-weight: 800; letter-spacing: 2px; }
+
+    /* map placeholder */
+    .map-section { padding: 0 0 100px; background: white; }
+    .map-container {
+      border-radius: 40px; overflow: hidden; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+      height: 350px; background-image: url('https://images.unsplash.com/photo-1569336415962-a4bd9f69cdc9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+      background-size: cover; background-position: center; display: flex;
+      align-items: center; justify-content: center;
+    }
+    .map-overlay {
+      background: rgba(255,255,255,0.9); padding: 20px 40px; border-radius: 60px;
+      font-weight: 700; font-size: 1.2rem;
+    }
+
+    /* footer */
+    footer {
+      background: #0f0f0f; color: #d1d1d1; padding: 80px 0 40px;
+      border-top: 1px solid #222;
+    }
+    .footer-content {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 50px;
+    }
+    .footer-col h4 {
+      color: #fff; font-size: 1.2rem; margin-bottom: 25px; text-transform: uppercase; letter-spacing: 1px;
+    }
+    .footer-col p { line-height: 1.8; margin-bottom: 20px; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 12px; }
+    .footer-col ul li a { color: #aaa; text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: #c2a25b; }
+    
+    .footer-logo img { filter: brightness(1.2); margin-bottom: 20px; }
+    
+    .social-links { display: flex; gap: 15px; margin-top: 20px; }
+    .social-links a {
+      width: 40px; height: 40px; background: #222; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      border-radius: 50%; transition: all 0.3s; font-size: 1rem;
+    }
+    .social-links a:hover { background: #c2a25b; transform: translateY(-3px); }
+
+    .footer-contact p { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
+    .footer-contact i { color: #c2a25b; width: 20px; }
+
+    .footer-bottom {
+      border-top: 1px solid #222; margin-top: 60px; padding-top: 30px; text-align: center;
+      font-size: 0.95rem; color: #777;
+    }
+    @media (max-width:600px){ .section-title{font-size:2.2rem;} .page-hero h1{font-size:3.5rem;} }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <div class="logo"><img src="Logo.png" alt="Litoh Graphics Studio Logo" style="height: 90px; vertical-align: middle;"></div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="campaign.html">Campaigns</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="active">Contact</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- small hero -->
+  <section class="page-hero parallax-wrapper">
+    <div class="parallax-bg page-hero-bg"></div>
+    <div class="overlay-dark"></div>
+    <div class="container page-hero-content reveal">
+      <div class="hero-tag">Your creative partners</div>
+      <h1>Contact us</h1>
+      <p style="font-size:1.3rem; max-width:600px;">Reach out today – we're ready to bring your ideas to life.</p>
+    </div>
+  </section>
+
+  <!-- contact main area -->
+  <section class="contact-main reveal">
+    <div class="container contact-grid">
+      <!-- left side: address/phone/social -->
+      <div class="contact-details reveal-left">
+        <div class="info-block reveal">
+          <h3>Visit or write</h3>
+          <div class="info-item"><i class="fas fa-map-pin"></i> <span>Watersys Plaza, First Floor, Nairobi</span></div>
+          <div class="info-item"><i class="fas fa-envelope"></i> <span>P.O Box: 37812 - 00100, GPO</span></div>
+          <div class="info-item"><i class="fas fa-phone-alt"></i> <a href="tel:0728974780">0728 974 780</a></div>
+          <div class="info-item"><i class="fas fa-clock"></i> <span>Mon–Sat: 8am–7pm</span></div>
+        </div>
+
+        <div class="info-block">
+          <h3>Talk to us</h3>
+          <div class="info-item"><i class="fas fa-phone-volume"></i> <span style="font-size:2rem; font-weight:800; color:#c2a25b;">0728 974 780</span></div>
+          <p style="margin:10px 0 20px;">Call or WhatsApp today — immediate response for all inquiries.</p>
+        </div>
+
+        <div class="info-block">
+          <h3>Social media</h3>
+          <div class="social-links-contact">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+
+        <!-- small testimonial (trust) -->
+        <div style="background:#f0ede8; padding:25px; border-radius:30px; margin-top:20px;">
+          <i class="fas fa-quote-right" style="color:#c2a25b; font-size:2rem;"></i>
+          <p style="font-style:italic;">“Litoh handled our rebranding and IT infrastructure. They are fast, creative, and deliver exactly what was promised.”</p>
+          <p style="font-weight:700; margin-top:10px;">— Corporate Client</p>
+        </div>
+      </div>
+
+      <!-- right side: contact form -->
+      <div class="contact-form-block reveal-right">
+        <h2>Ready to start? <span class="text-red">Let's talk</span></h2>
+        <p style="margin-bottom:30px;">Fill this form and we’ll get back to you shortly to discuss your project needs.</p>
+        
+        <form action="#" method="post">
+          <div class="form-row">
+            <div class="form-group"><input type="text" placeholder="Full name*" required></div>
+            <div class="form-group"><input type="text" placeholder="Company / Organization (optional)"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><input type="email" placeholder="Email address*" required></div>
+            <div class="form-group"><input type="tel" placeholder="Phone number*" required></div>
+          </div>
+          <div class="form-group" style="margin-bottom:20px;">
+            <select required>
+              <option value="" disabled selected>I'm interested in...</option>
+              <option>Branding & Identity Design</option>
+              <option>Large Format Printing</option>
+              <option>IT Support & Tech Services</option>
+              <option>Web Design & Development</option>
+              <option>Graphic Design Services</option>
+            </select>
+          </div>
+          <textarea rows="4" placeholder="Tell us about your project, goals, or deadlines..."></textarea>
+          <div class="checkbox">
+            <input type="checkbox" id="urgent">
+            <label for="urgent">This is an urgent request</label>
+          </div>
+          <button type="submit" class="btn-submit"><i class="fas fa-paper-plane"></i> Send message</button>
+        </form>
+        <p style="margin-top:25px; font-size:0.9rem; color:#555;">We respect your privacy. Only creative solutions.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- urgency strip -->
+  <section class="campaign-strip reveal">
+    <div class="container">
+      <h3>Premium solutions for every brand</h3>
+      <p style="font-size:1.3rem;">Call our desk now:</p>
+      <div class="phone-big">0728 974 780</div>
+      <a href="tel:0728974780" class="btn btn-outline-light" style="margin-top:20px; display:inline-block;">Click to call</a>
+    </div>
+  </section>
+
+  <!-- map area (visual) -->
+  <section class="map-section reveal">
+    <div class="container">
+      <div class="map-container">
+        <div class="map-overlay">
+          <i class="fas fa-map-marker-alt" style="color:#c2a25b;"></i> Watersys Plaza, First Floor (opp. Quickmart)
+        </div>
+      </div>
+      <p style="text-align:center; margin-top:20px;"><i class="fas fa-car" style="color:#c2a25b;"></i> Ample parking • Wheelchair accessible</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-col">
+          <div class="footer-logo"><img src="Logo.png" alt="LITOH" style="height: 70px;"></div>
+          <p>Premium creative studio specializing in branding, high-impact graphic design, and comprehensive business solutions since 2012.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-x-twitter"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="campaign.html">Campaigns</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Services</h4>
+          <ul>
+            <li><a href="services.html">Branding & Identity</a></li>
+            <li><a href="services.html">Large Format Printing</a></li>
+            <li><a href="services.html">Campaign Posters</a></li>
+            <li><a href="services.html">IT Tech Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone-alt"></i> 0728 974 780</p>
+            <p><i class="fas fa-envelope"></i> info@litoh.co.ke</p>
+            <p><i class="fas fa-map-marker-alt"></i> Watersys Plaza, 1st Floor</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Litoh Graphics Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scripts -->
+  <script>
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Smooth Parallax for Video/Images
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.pageYOffset;
+      
+      // Page Hero Parallax
+      const parallaxBg = document.querySelector('.parallax-bg');
+      if (parallaxBg && window.innerWidth > 768) {
+        parallaxBg.style.transform = `translateY(${scrollPos * 0.12}px)`;
+      }
+    });
+
+    // Auto-renew year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
