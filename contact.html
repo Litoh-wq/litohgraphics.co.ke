@@ -484,4 +484,84 @@
         <div class="footer-col">
           <h4>Key Services</h4>
           <ul>
-       
+            <li><a href="services.html">Branding & Identity</a></li>
+            <li><a href="services.html">Large Format Printing</a></li>
+            <li><a href="services.html">Campaign Posters</a></li>
+            <li><a href="services.html">IT Tech Support</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact Info</h4>
+          <div class="footer-contact">
+            <p><i class="fas fa-phone-alt"></i> 0728 974 780</p>
+            <p><i class="fas fa-envelope"></i> info@litoh.co.ke</p>
+            <p><i class="fas fa-map-marker-alt"></i> Watersys Plaza, 1st Floor</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> Litoh Graphics Studio. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- scripts -->
+  <script>
+    // Hamburger Menu Logic
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    if (hamburger && navLinks) {
+      hamburger.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+        const icon = hamburger.querySelector('i');
+        if (navLinks.classList.contains('active')) {
+          icon.classList.remove('fa-bars');
+          icon.classList.add('fa-times');
+        } else {
+          icon.classList.remove('fa-times');
+          icon.classList.add('fa-bars');
+        }
+      });
+    }
+
+    // Intersection Observer for Reveal Animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
+      revealObserver.observe(el);
+    });
+
+    // Smooth Parallax for Video/Images
+    window.addEventListener('scroll', () => {
+      const scrollPos = window.pageYOffset;
+      
+      // Page Hero Parallax
+      const parallaxBg = document.querySelector('.parallax-bg');
+      if (parallaxBg && window.innerWidth > 768) {
+        parallaxBg.style.transform = `translateY(${scrollPos * 0.12}px)`;
+      }
+    });
+
+    // Auto-renew year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <!-- WhatsApp Widget -->
+  <a href="https://wa.me/254728974780" class="whatsapp-widget pulse" target="_blank" rel="noopener noreferrer">
+    <i class="fab fa-whatsapp"></i>
+    <span class="whatsapp-tooltip">Talk to us</span>
+  </a>
+</body>
+</html>
