@@ -255,6 +255,81 @@
       font-size: 0.95rem; color: #777;
     }
     @media (max-width:600px){ .section-title{font-size:2.2rem;} .page-hero h1{font-size:3.5rem;} }
+    /* WhatsApp Widget */
+    .whatsapp-widget {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25D366;
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      text-align: center;
+      font-size: 35px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .whatsapp-widget.pulse {
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+    }
+    .whatsapp-widget:hover {
+      background-color: #128C7E;
+      transform: scale(1.1);
+      color: white;
+      animation: none;
+    }
+    .whatsapp-tooltip {
+      visibility: hidden;
+      width: 100px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      border-radius: 6px;
+      padding: 6px 0;
+      position: absolute;
+      z-index: 1001;
+      bottom: 25%;
+      right: 125%;
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1.2;
+    }
+    .whatsapp-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      margin-top: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent transparent transparent #333;
+    }
+    .whatsapp-widget:hover .whatsapp-tooltip {
+      visibility: visible;
+      opacity: 1;
+    }
+    @media (max-width: 600px) {
+      .whatsapp-widget {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+        bottom: 20px;
+        right: 20px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -409,79 +484,4 @@
         <div class="footer-col">
           <h4>Key Services</h4>
           <ul>
-            <li><a href="services.html">Branding & Identity</a></li>
-            <li><a href="services.html">Large Format Printing</a></li>
-            <li><a href="services.html">Campaign Posters</a></li>
-            <li><a href="services.html">IT Tech Support</a></li>
-          </ul>
-        </div>
-
-        <div class="footer-col">
-          <h4>Contact Info</h4>
-          <div class="footer-contact">
-            <p><i class="fas fa-phone-alt"></i> 0728 974 780</p>
-            <p><i class="fas fa-envelope"></i> info@litoh.co.ke</p>
-            <p><i class="fas fa-map-marker-alt"></i> Watersys Plaza, 1st Floor</p>
-          </div>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; <span id="year"></span> Litoh Graphics Studio. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- scripts -->
-  <script>
-    // Hamburger Menu Logic
-    const hamburger = document.querySelector('.hamburger');
-    const navLinks = document.querySelector('.nav-links');
-    if (hamburger && navLinks) {
-      hamburger.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        const icon = hamburger.querySelector('i');
-        if (navLinks.classList.contains('active')) {
-          icon.classList.remove('fa-bars');
-          icon.classList.add('fa-times');
-        } else {
-          icon.classList.remove('fa-times');
-          icon.classList.add('fa-bars');
-        }
-      });
-    }
-
-    // Intersection Observer for Reveal Animations
-    const observerOptions = {
-      threshold: 0.1,
-      rootMargin: "0px 0px -50px 0px"
-    };
-
-    const revealObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('active');
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => {
-      revealObserver.observe(el);
-    });
-
-    // Smooth Parallax for Video/Images
-    window.addEventListener('scroll', () => {
-      const scrollPos = window.pageYOffset;
-      
-      // Page Hero Parallax
-      const parallaxBg = document.querySelector('.parallax-bg');
-      if (parallaxBg && window.innerWidth > 768) {
-        parallaxBg.style.transform = `translateY(${scrollPos * 0.12}px)`;
-      }
-    });
-
-    // Auto-renew year
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+       
